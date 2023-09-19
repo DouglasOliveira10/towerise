@@ -10,13 +10,15 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "cliente")
-public class ClienteEntity {
-
+@Table(name = "alexa_webhook")
+public class AlexaWebhookEntity {
+	
 	@Id
-	@SequenceGenerator(name="cliente_seq", initialValue=10, allocationSize=10)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq")
+	@SequenceGenerator(name="alexa_webhook_seq", allocationSize=10)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "alexa_webhook_seq")
 	private Long id;
-	private String nome;
-	private Integer idade;	
+	private String webhookVisitante;
+	private String webhookCorrespondencia;
+	private Long idMorador;
+
 }

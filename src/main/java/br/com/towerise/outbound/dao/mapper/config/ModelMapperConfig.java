@@ -1,4 +1,4 @@
-package br.com.towerise.outbound.dao.config;
+package br.com.towerise.outbound.dao.mapper.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

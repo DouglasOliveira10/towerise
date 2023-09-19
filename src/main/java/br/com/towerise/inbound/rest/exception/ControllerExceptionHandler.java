@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import br.com.towerise.core.exception.ClienteException;
+import br.com.towerise.core.exception.ParamException;
 import br.com.towerise.inbound.rest.responses.ResponseAPI;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
@@ -26,14 +26,14 @@ import jakarta.validation.ConstraintViolationException;
 public class ControllerExceptionHandler {
 	
 	/**
-	 * Tratamento para exceções do tipo cliente
+	 * Tratamento para exceções do tipo param
 	 * 
-	 * @param ClienteException ex
+	 * @param ParamException ex
 	 * @return ResponseAPI
 	 */
-	@ExceptionHandler(ClienteException.class)
+	@ExceptionHandler(ParamException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
-	protected ResponseAPI clienteExceptionHandler(ClienteException ex) {
+	protected ResponseAPI paramExceptionHandler(ParamException ex) {
 		return ResponseAPI.builder()
 				.httpStatusCode(HttpStatus.BAD_REQUEST.value())
 				.message(ex.getMessage()) 
