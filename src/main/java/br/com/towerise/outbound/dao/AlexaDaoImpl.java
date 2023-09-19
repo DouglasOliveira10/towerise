@@ -34,4 +34,9 @@ public class AlexaDaoImpl implements AlexaDao {
 		return alexaWebhookMapper.toListDTO(entitys);
 	}
 
+	@Override
+	public AlexaWebhookDTO buscarAlexaWebhooksByMoradorId(Long id) {
+		var entity = alexaWebhookRepository.findByIdMorador(id);
+		return alexaWebhookMapper.toDTO(entity);
+	}
 }

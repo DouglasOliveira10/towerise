@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.towerise.core.dto.AlexaWebhookDTO;
 import br.com.towerise.core.exception.AlexaException;
-import br.com.towerise.core.exception.ParamException;
 import br.com.towerise.core.port.in.AlexaService;
 import br.com.towerise.inbound.rest.responses.ResponseAPI;
 import br.com.towerise.inbound.rest.responses.ResponseItems;
@@ -40,7 +39,7 @@ public class ResidentController {
 	}
 	
 	@GetMapping("/alexa/webhook")
-	public ResponseAPI buscarAlexaWebhooks() throws ParamException {
+	public ResponseAPI buscarAlexaWebhooks() throws AlexaException {
 		log.info("Buscando alexa webhooks cadastrados}");
 		var listaDto = alexaService.buscarAlexaWebhooks();
 		

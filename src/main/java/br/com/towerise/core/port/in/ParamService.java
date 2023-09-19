@@ -14,11 +14,11 @@ public interface ParamService {
 
 	List<CondominioDTO> buscarCondominios() throws ParamException;
 
-	SindicoDTO cadastrarSindico(@Valid SindicoDTO sindicoDTO);
+	SindicoDTO cadastrarSindico(@Valid SindicoDTO sindicoDTO) throws ParamException;
 
-	List<SindicoDTO> buscarSindicos();
+	List<SindicoDTO> buscarSindicos() throws ParamException;
 
-	MoradorDTO cadastrarmorador(@Valid MoradorDTO moradorDTO);
+	MoradorDTO cadastrarMorador(@Valid MoradorDTO moradorDTO) throws ParamException;
 
-	List<MoradorDTO> buscarMoradores();
+	List<MoradorDTO> buscarMoradores() throws ParamException;
 }

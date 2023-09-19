@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
+import br.com.towerise.core.exception.AlexaException;
+import br.com.towerise.core.exception.NotificationException;
 import br.com.towerise.core.exception.ParamException;
 import br.com.towerise.inbound.rest.responses.ResponseAPI;
 import jakarta.validation.ConstraintViolation;
@@ -34,6 +36,36 @@ public class ControllerExceptionHandler {
 	@ExceptionHandler(ParamException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	protected ResponseAPI paramExceptionHandler(ParamException ex) {
+		return ResponseAPI.builder()
+				.httpStatusCode(HttpStatus.BAD_REQUEST.value())
+				.message(ex.getMessage()) 
+				.build();
+	}
+	
+	/**
+	 * Tratamento para exceções do tipo alexa
+	 * 
+	 * @param AlexaException ex
+	 * @return ResponseAPI
+	 */
+	@ExceptionHandler(AlexaException.class)
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	protected ResponseAPI alexaExceptionHandler(AlexaException ex) {
+		return ResponseAPI.builder()
+				.httpStatusCode(HttpStatus.BAD_REQUEST.value())
+				.message(ex.getMessage()) 
+				.build();
+	}
+	
+	/**
+	 * Tratamento para exceções do tipo notification
+	 * 
+	 * @param NotificationException ex
+	 * @return ResponseAPI
+	 */
+	@ExceptionHandler(NotificationException.class)
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	protected ResponseAPI notificationExceptionHandler(NotificationException ex) {
 		return ResponseAPI.builder()
 				.httpStatusCode(HttpStatus.BAD_REQUEST.value())
 				.message(ex.getMessage()) 

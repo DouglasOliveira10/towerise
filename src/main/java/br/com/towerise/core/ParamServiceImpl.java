@@ -30,22 +30,22 @@ public class ParamServiceImpl implements ParamService {
 	}
 
 	@Override
-	public SindicoDTO cadastrarSindico(@Valid SindicoDTO sindicoDTO) {
+	public SindicoDTO cadastrarSindico(@Valid SindicoDTO sindicoDTO) throws ParamException {
 		return paramDao.cadastrarSindico(sindicoDTO);
 	}
 
 	@Override
-	public List<SindicoDTO> buscarSindicos() {
+	public List<SindicoDTO> buscarSindicos() throws ParamException {
 		return paramDao.buscarSindicos();
 	}
 
 	@Override
-	public MoradorDTO cadastrarmorador(@Valid MoradorDTO moradorDTO) {
+	public MoradorDTO cadastrarMorador(@Valid MoradorDTO moradorDTO) throws ParamException {
 		return paramDao.cadastrarMorador(moradorDTO);
 	}
 
 	@Override
-	public List<MoradorDTO> buscarMoradores() {
+	public List<MoradorDTO> buscarMoradores() throws ParamException {
 		return paramDao.buscarMoradores();
 	}
 

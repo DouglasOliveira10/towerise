@@ -11,4 +11,6 @@ public interface AlexaDao {
 
 	List<AlexaWebhookDTO> buscarAlexaWebhooks();
 
+	AlexaWebhookDTO buscarAlexaWebhooksByMoradorId(Long id);
+
 }
