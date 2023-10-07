@@ -8,7 +8,7 @@
 
 ## Objetivo
 
-O objetivo do sistema é ser um exemplo de API utilizando spring-boot na versão 2.2.4, o projeto contem depencias como lombok, swagger e banco de dados em memoria H2, além das dependencias conhecidas do spring como devtools, spring-data e spring-web. O projeto pode ser baixo e ultilizado como back-end para profissionais front-end ou simplismente uma base de estudos ultilizando o postman. Sugestões são bem vindas!
+O objetivo do sistema é ser um exemplo de API utilizando spring-boot na versão 3.1.3, o projeto contem depencias como lombok, swagger e banco de dados em memoria H2, além das dependencias conhecidas do spring como devtools, spring-data e spring-web. O projeto pode ser baixo e ultilizado como back-end para profissionais front-end ou simplismente uma base de estudos ultilizando o postman. Sugestões são bem vindas!
 
 ---
 
